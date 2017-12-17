@@ -19,6 +19,13 @@
         android:layout_height="wrap_content"
         android:text="Lista aktualnie jest nie dostępna"
         android:textColor="#3c3939"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:id="@+id/lista"
+
+
+        />
 
     </LinearLayout>
+
+
+
