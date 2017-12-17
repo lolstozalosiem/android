@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#FF0099CC"
+
+
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zabrze"
+        android:textSize="24sp"
+        android:textColor="#ffffff"
+        android:id="@+id/miasto"
+        />
+
+    <ImageView
+        android:layout_width="101dp"
+        android:layout_height="123dp"
+        android:src="@drawable/ic_wb_sunny_black_24dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30 stopni celcjusza"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pamiętaj o filtrze"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Podaj miejsce:"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+      />
+
+    <EditText
+        android:layout_width="349dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/wpisz"
+        />
+
+    <Button
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:text="Zmień Miejsce"
+        android:textColor="#FF0099CC"
+        android:id="@+id/zmienmiejsce"
+        android:background="#ffffff"
+        android:layout_margin="15dp"
+        />
+
+    <Button
+        android:id="@+id/pokaz"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:text="Pokaż listę dostępnych miejsc"
+        android:textColor="#FF0099CC"
+
+        />
+
+</LinearLayout>
+
+
+
