@@ -7,23 +7,13 @@
     android:background="#FF0099CC"
 
 >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kliknąłeś w listę miejsc"
-        android:textColor="#ffffff"
-        android:textSize="15sp" />
+    <android.support.v7.app.AlertController.RecycleListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recycle"
+        >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lista aktualnie jest nie dostępna"
-        android:textColor="#3c3939"
-        android:textSize="15sp"
-        android:id="@+id/lista"
-
-
-        />
+    </android.support.v7.app.AlertController.RecycleListView>
 
     </LinearLayout>
 
