@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 import java.util.ArrayList;
 
-public class secActivity extends RecyclerView.Adapter<secActivity.ViewHolder> {
+public abstract class  secActivity extends RecyclerView.Adapter<secActivity.ViewHolder> {
 
 
     private ArrayList<Places> places = new ArrayList<>();
@@ -29,10 +29,20 @@ public class secActivity extends RecyclerView.Adapter<secActivity.ViewHolder> {
         this.places = places;
     }
 
-
-
-
     @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
+    {
+        View itemLayoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item,null);
+        return new ViewHolder(itemLayoutView);
+    }
+
+    public void onBindViewHolder(ViewHolder holder, int position)
+    {
+        holder.setPlacesName(places.get(position).getPlaceName());
+        holder.setPlacesInformation(places.get(position).getInformation());
+
+    }
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sec);
@@ -44,22 +54,7 @@ public class secActivity extends RecyclerView.Adapter<secActivity.ViewHolder> {
         rezultat.setText(przekazanytekst);
     }
 
-    private void setPlacesName(String nam)
-    {
-        placeName.setText(nam);
-    }
 
-    private void setPlacesInformation(String inf )
-    {
-        information.setText(inf);
-    }
-
-    public ViewHolder(View itemView) {
-        super(itemView);
-        ButterKnife.bind(this, itemView);
-    }
-
-    @Override
     public void onBindView(ViewHolder view, int position)
     {
         view.setPlacesName(places.get(position).getPlaceName());
@@ -67,14 +62,14 @@ public class secActivity extends RecyclerView.Adapter<secActivity.ViewHolder> {
     }
 
 
-    @Override
+
     public ViewHolder onCreate(ViewGroup parent, int viewType)
     {
         View itemLayoutView = LayoutInflater.from(parent.getContext()). inflate(R.layout.list_item, null);
         return new  ViewHolder(itemLayoutView);
     }
 
-    @Override
+
     public int getItemCount() {
         return places.size();
     }

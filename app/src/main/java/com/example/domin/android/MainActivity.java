@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.pokaz) EditText poka;
 
 
-
+// stworzenie BindView dla RecyclerView
     @BindView(R.id.rV)
     RecyclerView rV;
 
@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         ButterKnife.bind(this);
 
 
@@ -84,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         places.add(new Place("Katowice", "Deszczowo"));
 
 
-        // stworzenie LayoutManagera
+        // stworzenie LayoutManagera i ustawienie go na adapterze
         RecyclerView.LayoutManager lm = new LinearLayoutManager((getApplicationContext()));
         rV.setLayoutManager(lm);
 
