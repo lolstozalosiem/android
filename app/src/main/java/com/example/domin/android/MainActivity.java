@@ -12,7 +12,11 @@ import android.content.Intent;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import java.util.ArrayList;
+import android.widget.ImageView;
 
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.model.GlideUrl;
 
 import org.w3c.dom.Text;
 
@@ -20,13 +24,29 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+
+
 public class MainActivity extends AppCompatActivity {
+
+
+
 
 
     @BindView(R.id.wpisz) EditText wpisane;
     @BindView(R.id.zmienmiejsce) EditText zmienButton;
     @BindView(R.id.miasto) EditText tutaj;
     @BindView(R.id.pokaz) EditText poka;
+
+
+
+    String imgUrl = "https://www.google.pl/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjqv-Kr5LnYAhWFIVAKHRXjDYUQjRwIBw&url=https%3A%2F%2Fwww.superkid.pl%2Fkrzyzowki-online-pogoda&psig=AOvVaw2K09werDUAOHSqNWxPTAG_&ust=1514998854223192";
+    ImageView imageView = (ImageView) findViewById(R.id.image);
+
+
+         Glide.with(this)
+                 .load(imgUrl)
+                 .into(imageView);
+
 
 
 // stworzenie BindView dla RecyclerView

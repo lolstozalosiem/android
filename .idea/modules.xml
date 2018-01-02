@@ -3,10 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://C:/dwa/android/android.iml" filepath="C:/dwa/android/android.iml" />
-      <module fileurl="file://D:\poswietach\android\android.iml" filepath="D:\poswietach\android\android.iml" />
-      <module fileurl="file://D:\GabGab\android\android.iml" filepath="D:\GabGab\android\android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\poswietach\android\app\app.iml" filepath="D:\poswietach\android\app\app.iml" />
     </modules>
   </component>
 </project>
