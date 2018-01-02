@@ -4,6 +4,9 @@ package com.example.domin.android;
  * Created by student on 2017-12-18.
  */
 
+// 4. Utwórz klasę dla modelu Place. Klasa powinna zawierać pola: placeName,
+// temperature, information,
+
 public class Place {
 
         String placeName;
@@ -16,7 +19,8 @@ public class Place {
         this.information = information;
    }
 
-    public
+  // 5. Wygeneruj gettery i settery dla klasy Place
+     public
 
         String getPlaceName()
         {

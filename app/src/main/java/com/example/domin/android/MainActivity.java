@@ -1,27 +1,14 @@
 package com.example.domin.android;
 
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.content.Intent;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import java.util.ArrayList;
 import android.widget.ImageView;
-
-
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.model.GlideUrl;
-
-import org.w3c.dom.Text;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
@@ -29,7 +16,8 @@ import butterknife.OnClick;
 public class MainActivity extends AppCompatActivity {
 
 
-
+    // 2. Zmień w projekcie wszystkie findViewById na:
+    //@BindView(R.id.nazwa_view)
 
 
     @BindView(R.id.wpisz) EditText wpisane;
@@ -38,14 +26,17 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.pokaz) EditText poka;
 
 
+// 18. W pierwszej aktywności zmień zawartość ImageView z Drawable na obrazek
+// związanym z pogodą, z linku URL. Wykorzystaj do tego bibliotekę Glide
 
+ // link URL do wybranego obrazka
     String imgUrl = "https://www.google.pl/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjqv-Kr5LnYAhWFIVAKHRXjDYUQjRwIBw&url=https%3A%2F%2Fwww.superkid.pl%2Fkrzyzowki-online-pogoda&psig=AOvVaw2K09werDUAOHSqNWxPTAG_&ust=1514998854223192";
-    ImageView imageView = (ImageView) findViewById(R.id.image);
-
-
-         Glide.with(this)
-                 .load(imgUrl)
-                 .into(imageView);
+// metoda szukająca id ImageView
+    ImageView imageView = (ImageView) getView().findViewById(R.id.image);
+// wykorzystanie biblioteki Glide
+    Glide.With(this)
+            .load(imgUrl) // załadowanie linku
+            .into(imageView) // wpisanie linku do ImageView
 
 
 
@@ -78,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // 1. Dodaj bindowanie z ButterKnifa do aktywności
         ButterKnife.bind(this);
 
 
@@ -86,28 +79,33 @@ public class MainActivity extends AppCompatActivity {
         // tutaj = (TextView) findViewById(R.id.miasto);
         //poka =(Button)findViewById(R.id.pokaz);
 
+
+        // 3. Zamień wszystkie setOnClickListener na:
+        // @OnClick (R.id.nazwa_view)
+        //void onClick() { }
+
+
         //zmienButton.setOnClickListener(new View.OnClickListener()
-
-
         //  poka.setOnClickListener(new View.OnClickListener() {
 
         // @Override
         //  public void onClick(View v) {
 
 
-        // stworzenie listy places
+        // 13. Stworzenie listy places
         ArrayList<Place> places = new ArrayList<>();
-        // dodanie obiektów do listy places
+        // 13. Dodanie obiektów do listy places
         places.add(new Place("Zabrze", "Słonecznie"));
         places.add(new Place("Ruda Slaska", "Pochmurnie"));
         places.add(new Place("Katowice", "Deszczowo"));
 
 
-        // stworzenie LayoutManagera i ustawienie go na adapterze
+        // 11. Stworzenie LayoutManagera
+        // 12. Ustawienie go na adapterze
         RecyclerView.LayoutManager lm = new LinearLayoutManager((getApplicationContext()));
         rV.setLayoutManager(lm);
 
-        // stworzenie adaptera
+        // 11. Stworzenie Adaptera
         secActivity placeAdapter = new secActivity(places);
         rV.setAdapter(placeAdapter);
 

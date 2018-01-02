@@ -6,6 +6,7 @@ import butterknife.ButterKnife;
 /**
  * Created by student on 2017-12-18.
  */
+// 8. Utwórz klasę ViewHoldera
 
 public class ViewHolder extends RecyclerView.ViewHolder
 {

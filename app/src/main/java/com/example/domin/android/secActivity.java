@@ -3,17 +3,11 @@ package com.example.domin.android;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
 
 import java.util.ArrayList;
 
@@ -30,6 +24,7 @@ public abstract class  secActivity extends RecyclerView.Adapter<secActivity.View
     }
 
     @Override
+
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
         View itemLayoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item,null);
@@ -43,6 +38,8 @@ public abstract class  secActivity extends RecyclerView.Adapter<secActivity.View
 
     }
 
+    // 16. Zmień wygenerowane metody, aby działały poprawnie:
+    //a. onCreate – powinien być setowany .xml,
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sec);
@@ -55,6 +52,9 @@ public abstract class  secActivity extends RecyclerView.Adapter<secActivity.View
     }
 
 
+
+    //c. onBindView powinno wywoływać metody z viewholdera do uzupełnienia
+    // danych na konkretnym itemie.
     public void onBindView(ViewHolder view, int position)
     {
         view.setPlacesName(places.get(position).getPlaceName());
@@ -69,7 +69,7 @@ public abstract class  secActivity extends RecyclerView.Adapter<secActivity.View
         return new  ViewHolder(itemLayoutView);
     }
 
-
+    //b. getItemCount powinno zwracać rozmiar listy danych,
     public int getItemCount() {
         return places.size();
     }
